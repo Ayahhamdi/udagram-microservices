@@ -1,0 +1,29 @@
+language: node_js
+node_js:
+  - 12
+
+services:
+  - docker
+
+# Pre-testing installs
+install:
+  - echo "udagram-microservices is going to be installing"
+
+# Scripts to be run such as tests
+before_script:
+  - echo "no tests"
+
+script:
+  - docker --version # print the version for logging
+  - docker build -f udagram-feed-api/Dockerfile -t udagram-feed-api .
+  - docker tag udagram-feed-api ayahhamdi/udagram-feed-api:latest
+  - docker build -f udagram-user-api/Dockerfile -t udagram-user-api .
+  - docker tag udagram-user-api ayahhamdi/udagram-user-api:latest
+  - docker build -f udagram-frontend/Dockerfile -t udagram-frontend .
+  - docker tag udagram-frontend ayahhamdi/udagram-frontend:latest
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push ayahhamdi/udagram-feed-api
+  - docker push ayahhamdi/udagram-user-api
+  - docker push ayahhamdi/udagram-frontend
