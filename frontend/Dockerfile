@@ -10,7 +10,8 @@ COPY frontend/package*.json ./
 COPY frontend/ionic.config.json ./
 
 # Install dependencies
-RUN npm ci
+RUN npm install
+RUN npm start
 
 # Copy app source
 COPY . .
