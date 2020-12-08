@@ -7,6 +7,7 @@ WORKDIR /usr/src/app
 # Install app dependencies by copying
 # package.json and package-lock.json
 COPY frontend/package*.json ./
+COPY ionic.config.json ./
 
 # Install dependencies
 RUN npm ci
