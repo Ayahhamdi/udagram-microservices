@@ -15,7 +15,7 @@ RUN npm start
 
 # Copy app source
 COPY . .
-RUN ionic build
+RUN ionic serve
 
 ## Run 
 FROM nginx:alpine
