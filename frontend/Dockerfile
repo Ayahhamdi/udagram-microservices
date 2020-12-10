@@ -14,7 +14,7 @@ RUN npm ci
 
 # Copy app source
 COPY . .
-RUN ionic serve
+RUN ionic build
 
 ## Run 
 FROM nginx:alpine
