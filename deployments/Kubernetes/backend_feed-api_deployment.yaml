@@ -2,17 +2,17 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    service: backend_feed-api
-  name: backend_feed-api
+    service: backend-feed
+  name: backend-feed
 spec:
   replicas: 3
   template:
     metadata:
       labels:
-        service: backend_feed-api
+        service: backend-feed
     spec:
       containers:
-      - image: ayahhamdi/udagram-feed-api
+      - image: udagram-feed
         name: backend-feed
         imagePullPolicy: Always  
         resources:
@@ -76,4 +76,4 @@ spec:
       volumes:
       - name: aws-secret
         secret:
-          secretName: aws-secret 
+          secretName: aws-secret
