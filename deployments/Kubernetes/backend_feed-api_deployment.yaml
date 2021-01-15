@@ -6,6 +6,9 @@ metadata:
   name: backend-feed-api
 spec:
   replicas: 3
+  selector:
+    matchLabels:
+      service: backend-feed-api
   template:
     metadata:
       labels:
