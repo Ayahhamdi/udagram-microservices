@@ -5,7 +5,7 @@ metadata:
     service: backend-user-api
   name: backend-user-api
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       service: backend-user-api
