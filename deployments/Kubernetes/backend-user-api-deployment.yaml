@@ -54,3 +54,6 @@ spec:
               name: env-secret
               key: POSTGRES_USERNAME
       restartPolicy: Always
+selector:
+    matchLabels:
+      service: backend-feed-api
