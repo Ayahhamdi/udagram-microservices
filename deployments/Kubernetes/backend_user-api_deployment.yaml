@@ -2,18 +2,18 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    service: backend-user
-  name: backend-user
+    service: backend_user-api
+  name: backend_user-api
 spec:
   replicas: 2
   template:
     metadata:
       labels:
-        service: backend-user
+        service: backend_user-api
     spec:
       containers:
       - image: ayahhamdi/udagram-user-api
-        name: backend-user 
+        name: backend_user-api 
         imagePullPolicy: Always  
         resources:
           requests:
