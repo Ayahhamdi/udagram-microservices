@@ -4,11 +4,11 @@ services:
     build:
       context: .
     image: ayahhamdi/reverseproxy
-  backend_user-api:
+  backend-user-api:
     build:
       context: ../../backend_user-api
     image: ayahhamdi/udagram-user-api
-  backend_feed-api:
+  backend-feed-api:
     build:
       context: ../../backend_feed-api
     image: ayahhamdi/udagram-feed-api
